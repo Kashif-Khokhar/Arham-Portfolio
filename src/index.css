@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply font-body bg-void text-text-primary overflow-x-hidden min-h-screen leading-relaxed;
+  }
+
+  h1, h2, h3 {
+    @apply font-display tracking-wider;
+  }
+  
+  h4, h5, h6 {
+    @apply font-body font-semibold;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: theme('colors.deep'); }
+  ::-webkit-scrollbar-thumb { background: theme('colors.cyan.dim'); border-radius: 3px; }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    position: relative;
+  }
+  
+  .bg-grid-pattern::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, theme('colors.cyan.DEFAULT'), theme('colors.purple.DEFAULT'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

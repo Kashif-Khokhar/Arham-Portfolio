@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Building Secure Passwords: A Developer's Guide",
+    "slug": "building-secure-passwords",
+    "excerpt": "Learn why password security matters in 2025 and how modern algorithms generate truly unguessable credentials for your applications.",
+    "content": "In today's digital landscape, password security is more critical than ever. With data breaches becoming increasingly common, understanding how to generate and store passwords securely is a fundamental skill for every developer.\n\n## Why Password Strength Matters\n\nWeak passwords are the number one cause of account compromises. A password like '123456' can be cracked in milliseconds using brute-force attacks. Modern secure passwords should be at least 16 characters long and include a mix of uppercase letters, lowercase letters, numbers, and special symbols.\n\n## Entropy: The Science Behind Password Strength\n\nPassword strength is measured in bits of entropy. Each character you add to a password exponentially increases the number of possible combinations an attacker must try. A 16-character password using all character types has approximately 105 bits of entropy — effectively uncrackable with current technology.\n\n## Best Practices for Developers\n\n1. **Never store plain-text passwords** — Always use strong hashing algorithms like bcrypt or Argon2.\n2. **Use cryptographically secure random number generators** — Don't rely on Math.random() for security-sensitive operations.\n3. **Implement rate limiting** — Prevent brute-force attacks by limiting login attempts.\n4. **Enforce password policies** — Require minimum length and character diversity.\n5. **Use a password manager** — Encourage users to generate and store unique passwords.\n\n## The Arham Tech Zone Password Generator\n\nOur built-in password generator uses the Web Crypto API (server-side: Node.js crypto module) to generate truly random, cryptographically secure passwords. Every password is generated fresh on the server — no patterns, no predictability.\n\nStart using strong passwords today. Your future self — and your users — will thank you.",
+    "author": "Arham Dev",
+    "date": "2025-05-10",
+    "readTime": "5 min read",
+    "tags": ["Security", "Passwords", "Backend"],
+    "image": "🔐"
+  },
+  {
+    "id": 2,
+    "title": "QR Codes in Modern Web Apps: Everything You Need to Know",
+    "slug": "qr-codes-modern-web-apps",
+    "excerpt": "QR codes have made a massive comeback. Discover how to generate, customize, and deploy QR codes in your web applications efficiently.",
+    "content": "QR codes (Quick Response codes) were invented in 1994 by Denso Wave in Japan for tracking automotive parts. Fast forward to today, and they're everywhere — restaurant menus, payment systems, event tickets, and marketing campaigns.\n\n## How QR Codes Work\n\nA QR code is a 2D matrix barcode that encodes data in a grid of black and white squares. Unlike traditional barcodes, QR codes can store significantly more data and can be scanned from any direction. They can encode URLs, text, contact information, Wi-Fi credentials, and more.\n\n## The Technical Structure\n\nA QR code consists of several functional regions:\n- **Finder Patterns**: The three square modules in the corners help scanners locate and orient the code.\n- **Alignment Patterns**: Help correct for distortion in larger codes.\n- **Timing Patterns**: Allow the scanner to determine the size of the data modules.\n- **Data Modules**: The actual encoded information.\n- **Error Correction**: QR codes use Reed-Solomon error correction, allowing up to 30% of the code to be damaged while still being readable.\n\n## Generating QR Codes in Node.js\n\nThe `qrcode` npm package makes it trivially easy to generate QR codes as PNG images, SVGs, or Data URLs. Our backend API leverages this to produce high-quality QR codes on demand.\n\n## Use Cases for Developers\n\n1. **URL Shortening + QR**: Create shareable links with QR codes for offline marketing.\n2. **Payment Integration**: Link to payment pages for quick mobile transactions.\n3. **Authentication**: Use QR codes for two-factor authentication flows.\n4. **Product Tracking**: Embed product IDs and metadata for inventory systems.\n\nQR codes bridge the physical and digital worlds — and with the right tools, generating them is effortless.",
+    "author": "Arham Dev",
+    "date": "2025-05-05",
+    "readTime": "6 min read",
+    "tags": ["QR Code", "Node.js", "Tools"],
+    "image": "📱"
+  },
+  {
+    "id": 3,
+    "title": "REST API Design Principles Every Developer Should Know",
+    "slug": "rest-api-design-principles",
+    "excerpt": "Designing clean, predictable, and scalable REST APIs is an art. Here are the core principles that separate amateur APIs from professional ones.",
+    "content": "A well-designed REST API is a joy to work with. A poorly designed one is a maintenance nightmare. Whether you're building internal microservices or a public API for third-party developers, these principles will help you build APIs that stand the test of time.\n\n## 1. Use Nouns, Not Verbs in Endpoints\n\nYour URLs should represent resources, not actions. The HTTP method conveys the action.\n\n❌ `/getUser`, `/createPost`, `/deleteComment`\n✅ `/users`, `/posts`, `/comments`\n\n## 2. Use HTTP Methods Correctly\n\n- **GET**: Retrieve a resource (idempotent, no side effects)\n- **POST**: Create a new resource\n- **PUT**: Replace an entire resource\n- **PATCH**: Partially update a resource\n- **DELETE**: Remove a resource\n\n## 3. Use Proper HTTP Status Codes\n\nDon't return 200 OK for everything. Status codes communicate intent:\n- `200`: Success\n- `201`: Resource created\n- `400`: Bad request (client error)\n- `401`: Unauthorized\n- `404`: Resource not found\n- `500`: Internal server error\n\n## 4. Version Your API\n\nAlways version your APIs: `/api/v1/users`. This allows you to make breaking changes in v2 without disrupting existing clients.\n\n## 5. Consistent Error Responses\n\nAlways return errors in a consistent format:\n```json\n{\n  \"error\": true,\n  \"message\": \"Resource not found\",\n  \"code\": 404\n}\n```\n\n## 6. Use Pagination for Collections\n\nNever return unbounded lists. Use cursor-based or offset pagination with clear metadata about total counts and next pages.\n\n## 7. Document Everything\n\nA great API without documentation is useless. Use tools like Swagger/OpenAPI to auto-generate interactive docs from your code.\n\nFollow these principles and your APIs will be a delight to consume — by your team and by the developers who build on top of your platform.",
+    "author": "Arham Dev",
+    "date": "2025-04-28",
+    "readTime": "7 min read",
+    "tags": ["API", "REST", "Node.js", "Backend"],
+    "image": "⚡"
+  },
+  {
+    "id": 4,
+    "title": "Dark Mode UI Design: Tips for Developer Portfolios",
+    "slug": "dark-mode-ui-design-tips",
+    "excerpt": "Dark mode is no longer optional — it's expected. Here's how to design stunning dark interfaces that don't strain eyes and look professional.",
+    "content": "Dark mode has transcended trend status — it's now a core expectation for any modern web application. Beyond aesthetics, dark interfaces reduce eye strain in low-light environments and can extend battery life on OLED displays. Here's how to design dark UIs that actually look good.\n\n## The Psychology of Dark Design\n\nDark interfaces evoke professionalism, sophistication, and technical prowess. They're especially popular in developer tools, creative software, and tech platforms — which is why dark mode is the perfect choice for developer portfolios and tech-focused sites.\n\n## Color Theory for Dark UIs\n\nThe biggest mistake developers make with dark UIs: using pure black (#000000) as the background. Instead:\n\n- **Use dark grays**: #0a0a0a, #111111, #1a1a2e work much better\n- **Layer with depth**: Use 3-4 shades of dark color to create hierarchy\n- **Accent colors pop**: Cyan, neon green, electric blue, and orange sing against dark backgrounds\n- **Text contrast**: Ensure at least 4.5:1 contrast ratio for body text (WCAG AA)\n\n## Typography in Dark Mode\n\nFonts behave differently on dark backgrounds:\n- Reduce font weight slightly (400 instead of 500) for body text\n- Increase letter-spacing fractionally for readability\n- Avoid pure white (#fff) for body text — use #e0e0e0 or #cccccc\n\n## Neon & Glow Effects\n\nSubtle glow effects using `box-shadow` and `text-shadow` can add a premium tech feel:\n```css\n.neon-text {\n  color: #00d4ff;\n  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);\n}\n```\n\n## Performance Considerations\n\nDark UIs with many blur effects and gradients can be GPU-intensive. Use `will-change: transform` sparingly and test on mid-range devices.\n\nDark mode done right is unforgettable. Done wrong, it's just a gray mess. Commit to the aesthetic and execute it with precision.",
+    "author": "Arham Dev",
+    "date": "2025-04-20",
+    "readTime": "5 min read",
+    "tags": ["UI/UX", "CSS", "Design", "Dark Mode"],
+    "image": "🎨"
+  },
+  {
+    "id": 5,
+    "title": "Node.js + Express: Building Your First Production API",
+    "slug": "nodejs-express-production-api",
+    "excerpt": "From zero to a production-ready Express API in one guide. Middleware, error handling, CORS, and deployment — all covered.",
+    "content": "Express.js remains the most popular Node.js web framework for a reason: it's minimal, flexible, and battle-tested. Let's build a production-grade API from scratch.\n\n## Project Setup\n\n```bash\nmkdir my-api && cd my-api\nnpm init -y\nnpm install express cors helmet morgan\nnpm install -D nodemon\n```\n\n## Essential Middleware\n\nEvery production Express app needs these:\n\n```javascript\nconst express = require('express');\nconst cors = require('cors');\nconst helmet = require('helmet');\nconst morgan = require('morgan');\n\nconst app = express();\n\napp.use(helmet());           // Security headers\napp.use(cors());             // Cross-origin requests\napp.use(morgan('combined')); // Request logging\napp.use(express.json());     // Parse JSON bodies\n```\n\n## Structured Route Organization\n\nDon't put all routes in server.js. Organize by resource:\n\n```\nsrc/\n  routes/\n    users.js\n    posts.js\n    tools.js\n  middleware/\n    auth.js\n    validation.js\n  controllers/\n    userController.js\n```\n\n## Global Error Handling\n\nAlways add a global error handler as the last middleware:\n\n```javascript\napp.use((err, req, res, next) => {\n  console.error(err.stack);\n  res.status(err.status || 500).json({\n    error: true,\n    message: err.message || 'Internal Server Error'\n  });\n});\n```\n\n## Environment Variables\n\nNever hardcode secrets. Use `.env` files with the `dotenv` package:\n\n```\nPORT=3000\nMONGO_URI=mongodb://localhost:27017/mydb\nJWT_SECRET=your-secret-here\n```\n\n## Deployment Checklist\n\n1. ✅ Set NODE_ENV=production\n2. ✅ Use a process manager (PM2)\n3. ✅ Add rate limiting\n4. ✅ Enable HTTPS\n5. ✅ Set up logging and monitoring\n6. ✅ Configure CORS properly\n\nWith these foundations, your Express API will be ready for real-world traffic.",
+    "author": "Arham Dev",
+    "date": "2025-04-12",
+    "readTime": "8 min read",
+    "tags": ["Node.js", "Express", "Backend", "API"],
+    "image": "🚀"
+  },
+  {
+    "id": 6,
+    "title": "JavaScript Fetch API vs Axios: Which Should You Use?",
+    "slug": "fetch-api-vs-axios",
+    "excerpt": "Both are popular for HTTP requests in JavaScript, but they serve different needs. Here's a practical comparison to help you decide.",
+    "content": "Making HTTP requests is a fundamental task in modern JavaScript development. The two dominant choices are the native Fetch API and the Axios library. Both accomplish the same goal, but with different developer experiences and feature sets.\n\n## The Native Fetch API\n\nFetch is built into modern browsers and Node.js 18+. No installation required.\n\n```javascript\nconst response = await fetch('/api/users');\nif (!response.ok) throw new Error('Network response failed');\nconst data = await response.json();\n```\n\n**Pros**: Zero dependencies, native, lightweight\n**Cons**: No automatic error throwing on 4xx/5xx, verbose for complex requests, requires manual JSON parsing\n\n## Axios\n\nAxios is a popular third-party library with a cleaner API.\n\n```javascript\nconst { data } = await axios.get('/api/users');\n```\n\n**Pros**: Automatic error throwing, built-in JSON parsing, interceptors, request cancellation, better browser compatibility\n**Cons**: Extra dependency (~13kb)\n\n## Key Differences\n\n| Feature | Fetch | Axios |\n|---------|-------|-------|\n| Auto JSON parse | ❌ | ✅ |\n| Error on 4xx/5xx | ❌ | ✅ |\n| Request interceptors | ❌ | ✅ |\n| Upload progress | Limited | ✅ |\n| Bundle size | 0kb | ~13kb |\n\n## My Recommendation\n\n- **Small projects / simple requests**: Use Fetch — no extra dependency\n- **Large applications**: Use Axios — interceptors and better error handling pay dividends\n- **Node.js backends**: Fetch (18+) works great natively\n\nAt Arham Tech Zone, our frontend uses the native Fetch API to keep things lightweight and dependency-free while demonstrating how to properly handle the extra verbosity.\n\nChoose the tool that fits your project's scale and your team's preferences. Both are excellent choices.",
+    "author": "Arham Dev",
+    "date": "2025-04-05",
+    "readTime": "4 min read",
+    "tags": ["JavaScript", "Frontend", "HTTP", "Fetch", "Axios"],
+    "image": "🌐"
+  }
+]
